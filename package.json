@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "serverless-localstack": "^0.4.28",
+    "serverless-plugin-warmup": "^4.9.0"
+  },
+  "dependencies": {
+    "serverless": "^2.18.0"
+  }
+}

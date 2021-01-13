@@ -1,0 +1,27 @@
+app: aws-node-rest-api
+service: aws-node-rest-api
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-localstack
+
+custom:
+  bucket: tutorial
+  localstack:
+    stages:
+      - local
+    host: http://localhost
+    edgePort: 4566
+    lambda:
+      mountCode: True
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
