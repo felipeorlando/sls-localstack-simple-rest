@@ -4,7 +4,6 @@ services:
   localstack:
     container_name: "aws-node-rest-api_localstack"
     image: localstack/localstack
-    network_mode: bridge
     ports:
       - "4566:4566"
       - "4571:4571"
@@ -17,6 +16,7 @@ services:
       - KINESIS_ERROR_PROBABILITY=${KINESIS_ERROR_PROBABILITY- }
       - DOCKER_HOST=unix:///var/run/docker.sock
       - HOST_TMP_FOLDER=${TMPDIR}
+      - LAMBDA_REMOTE_DOCKER=0
       - AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
       - AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
       - AWS_DEFAULT_REGION=us-east-1

@@ -9,14 +9,14 @@ plugins:
   - serverless-localstack
 
 custom:
-  bucket: tutorial
+  bucket: aws-node-rest-api-local-serverlessdeploymentbucket-ddca2b6b
   localstack:
     stages:
       - local
     host: http://localhost
     edgePort: 4566
     lambda:
-      mountCode: True
+      mountCode: False
 
 functions:
   hello:
